@@ -5,9 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PedidosService {
+public interface PedidosService {
 
-    @Autowired
-    private PedidosRepository pedidosRepository;
+
 
 }
