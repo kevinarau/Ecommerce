@@ -1,4 +1,4 @@
-package Projeto_E_commerce.Service.serviceImple;
+package Projeto_E_commerce.Service.dto;
 
 
 import Projeto_E_commerce.Service.ClienteService;
@@ -29,8 +29,11 @@ public class Clienteimple implements ClienteService {
     }
 
     @Override
-    public List<Cliente> ListaCliente() {
-        return List.of();
+    public List<ClienteForm> ListaCliente() {
+        List<Cliente> forms = clienteRepository.findAll();
+          List<ClienteForm> forms1 = forms.stream().map(x -> new ClienteForm()).toList();
+          return forms1;
+
     }
 
     @Override

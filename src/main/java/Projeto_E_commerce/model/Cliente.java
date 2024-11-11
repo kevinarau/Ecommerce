@@ -35,7 +35,7 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
     @JsonIgnore
-   private List<Pedidos> pedidos= new ArrayList<>();
+   private List<Pedidos> pedidos = new ArrayList<>();
 
 
 }
