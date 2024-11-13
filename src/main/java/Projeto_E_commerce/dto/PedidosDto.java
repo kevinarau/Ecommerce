@@ -16,8 +16,7 @@ import java.time.LocalDateTime;
 @Service
 public class PedidosDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private  Long id;
 
     private String  dataPedidos;

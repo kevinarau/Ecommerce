@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 
 
 @Service
@@ -19,16 +20,18 @@ public class PedidosService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public Pedidos placeOrders(PedidosDto pedidosDto) {
-        Pedidos pedidos = new Pedidos();
-        if (pedidos == null) {
-            Cliente cliente = clienteRepository.findById(pedidosDto.getId()).get();
-            pedidos.setCliente(cliente);
-            pedidos.setDataPedidos(pedidosDto.getDataPedidos());
-
-            pedidosRepository.save(pedidos);
-
+    public Pedidos placeOrders(Long id,PedidosDto pedidosDto) {
+        Optional<Pedidos> pedidos = pedidosRepository.findById(id);
+        if(pedidos.isPresent()){
+            return pedidos.get();
+        }else {
+            Pedidos ped = new Pedidos();
+            Optional<Cliente> byId = clienteRepository.findById(id);
+           ped.setCliente(byId.get());
+           ped.setDataPedidos(pedidosDto.getDataPedidos());
+           pedidosRepository.save(ped);
+           return ped;
         }
- return pedidos;
+
     }
 }
