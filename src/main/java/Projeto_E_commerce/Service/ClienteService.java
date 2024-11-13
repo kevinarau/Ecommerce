@@ -45,8 +45,8 @@ public class ClienteService {
 
     public List<ClienteDto> ListaCliente() {
         List<Cliente> forms = clienteRepository.findAll();
-        List<ClienteDto> forms1 = forms.stream().map(x -> new ClienteDto()).toList();
-        return forms1;
+        return forms.stream().map(x -> new ClienteDto(x)).toList();
+
 
     }
 

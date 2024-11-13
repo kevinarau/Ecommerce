@@ -20,9 +20,7 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Cliente_id")
-    private Cliente cliente;
+
 
     private LocalDateTime dataPedidos = LocalDateTime.now();
 }

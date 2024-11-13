@@ -33,9 +33,7 @@ public class Cliente {
     @JoinColumn(unique = true)
     private String cpf;
 
-    @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
-    @JsonIgnore
-   private List<Pedidos> pedidos = new ArrayList<>();
+
 
 
 }

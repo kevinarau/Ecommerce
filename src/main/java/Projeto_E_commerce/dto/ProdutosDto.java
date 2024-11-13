@@ -4,10 +4,13 @@ import Projeto_E_commerce.model.Produtos;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Data
+@NoArgsConstructor
+@Service
 public class ProdutosDto {
-    private Long clienteid;
+    private Long id;
 
     private String titulo;
 
@@ -17,12 +20,10 @@ public class ProdutosDto {
 
 
     public ProdutosDto(Produtos produtos) {
-        this.clienteid = produtos.getId();
+        this.id = produtos.getId();
         this.descricao = produtos.getDescricao();
         this.preco = produtos.getPreco();
         this.titulo = produtos.getTitulo();
     }
 
-    public ProdutosDto() {
-    }
 }

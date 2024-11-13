@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_Produtos")
+@Table(name = "tb_lista_produtos")
 public class Produtos {
 
     @Id
@@ -23,9 +23,7 @@ public class Produtos {
 
     private  String descricao;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Cliente_id")
-    private Cliente cliente;
+
 
 
     }
