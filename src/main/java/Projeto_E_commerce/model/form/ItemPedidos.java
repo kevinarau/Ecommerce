@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "tb_ItemPedidos")
@@ -22,8 +24,8 @@ public class ItemPedidos {
     private double descontos;
 
 
-    public ItemPedidos(Cliente cliente, Pedidos pedidos, Produtos produtos, double descontos, int quantidade) {
-        Id.setClinte(cliente);
+
+    public ItemPedidos( Pedidos pedidos, Produtos produtos, double descontos, int quantidade) {
         Id.setPedidos(pedidos);
         Id.setProdutos(produtos);
         this.descontos = descontos;

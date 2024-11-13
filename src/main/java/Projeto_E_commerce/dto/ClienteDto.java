@@ -3,6 +3,7 @@ package Projeto_E_commerce.dto;
 
 import Projeto_E_commerce.model.Cliente;
 
+import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 @Service
 public class ClienteDto {
+
+    @Id
     private Long id;
 
     private String name;

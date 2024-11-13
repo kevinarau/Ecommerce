@@ -20,7 +20,10 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
 
-    private LocalDateTime dataPedidos = LocalDateTime.now();
+    private String  dataPedidos;
 }

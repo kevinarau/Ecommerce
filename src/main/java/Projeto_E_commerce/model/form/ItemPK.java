@@ -18,9 +18,7 @@ public class ItemPK {
     @JoinColumn(name =  "produtos_id")
     private Produtos produtos;
 
-    @ManyToOne 
-    @JoinColumn(name = "cliente_id")
-    private Cliente clinte;
+
 
     public Pedidos getPedidos() {
         return pedidos;
@@ -38,11 +36,4 @@ public class ItemPK {
         this.produtos = produtos;
     }
 
-    public Cliente getClinte() {
-        return clinte;
-    }
-
-    public void setClinte(Cliente clinte) {
-        this.clinte = clinte;
-    }
 }
