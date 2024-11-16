@@ -58,8 +58,5 @@ public class ClienteService {
     }
 
 
-    public void deletar(Long id) {
-
-    }
 
 }
