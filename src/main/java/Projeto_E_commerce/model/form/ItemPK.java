@@ -2,8 +2,7 @@ package Projeto_E_commerce.model.form;
 
 
 import Projeto_E_commerce.model.Cliente;
-import Projeto_E_commerce.model.Pedidos;
-import Projeto_E_commerce.model.Produtos;
+import Projeto_E_commerce.model.ProdutosList;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -12,28 +11,26 @@ import jakarta.persistence.ManyToOne;
 public class ItemPK {
 
     @ManyToOne
-    @JoinColumn(name =  "pedidos_id")
-    private Pedidos pedidos;
+    @JoinColumn(name =  "cliente_id")
+    private Cliente cliente;
     @ManyToOne
     @JoinColumn(name =  "produtos_id")
-    private Produtos produtos;
+    private ProdutosList produtos;
 
 
-
-    public Pedidos getPedidos() {
-        return pedidos;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public Produtos getProdutos() {
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public ProdutosList getProdutos() {
         return produtos;
     }
 
-    public void setPedidos(Pedidos pedidos) {
-        this.pedidos = pedidos;
-    }
-
-    public void setProdutos(Produtos produtos) {
+    public void setProdutos(ProdutosList produtos) {
         this.produtos = produtos;
     }
-
 }

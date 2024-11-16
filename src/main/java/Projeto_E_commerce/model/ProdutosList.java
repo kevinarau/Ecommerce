@@ -10,18 +10,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_lista_produtos")
-public class Produtos {
+public class ProdutosList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String titulo;
+    private String name;
 
-    @Column(name = "tb_preco",unique = true)
-    private double preco;
 
-    private  String descricao;
+
+
 
 
 

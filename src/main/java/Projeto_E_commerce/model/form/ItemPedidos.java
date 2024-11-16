@@ -1,14 +1,11 @@
 package Projeto_E_commerce.model.form;
 
 import Projeto_E_commerce.model.Cliente;
-import Projeto_E_commerce.model.Pedidos;
-import Projeto_E_commerce.model.Produtos;
+import Projeto_E_commerce.model.ProdutosList;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -25,8 +22,8 @@ public class ItemPedidos {
 
 
 
-    public ItemPedidos( Pedidos pedidos, Produtos produtos, double descontos, int quantidade) {
-        Id.setPedidos(pedidos);
+    public ItemPedidos(Cliente cliente , ProdutosList produtos, double descontos, int quantidade) {
+        Id.setCliente(cliente);
         Id.setProdutos(produtos);
         this.descontos = descontos;
         this.quantidade = quantidade;

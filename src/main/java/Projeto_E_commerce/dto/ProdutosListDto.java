@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 @Data
 @NoArgsConstructor
 @Service
-public class ProdutosDto {
+public class ProdutosListDto {
     @Id
     private Long id;
 
     private String name;
 
-    public ProdutosDto(ProdutosList produtos) {
+    public ProdutosListDto(ProdutosList produtos) {
         this.id = produtos.getId();
        this.name = produtos.getName();
     }
