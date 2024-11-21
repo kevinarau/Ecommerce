@@ -1,23 +1,25 @@
 package Projeto_E_commerce.dto;
 
-import Projeto_E_commerce.model.ProdutosList;
+import Projeto_E_commerce.model.ProdutosLista;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Data
-@NoArgsConstructor
 @Service
-public class ProdutosListDto {
+public class ProdutosListaDto {
     @Id
     private Long id;
 
     private String name;
 
-    public ProdutosListDto(ProdutosList produtos) {
-        this.id = produtos.getId();
-       this.name = produtos.getName();
+
+    public ProdutosListaDto() {
     }
 
+    public ProdutosListaDto( ProdutosLista prod) {
+        this.id = prod.getId();
+        this.name = prod.getName();
+    }
 }

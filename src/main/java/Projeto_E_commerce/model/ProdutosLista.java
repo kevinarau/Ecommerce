@@ -1,16 +1,16 @@
 package Projeto_E_commerce.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "tb_lista_produtos")
-public class ProdutosList {
+public class ProdutosLista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +19,12 @@ public class ProdutosList {
     private String name;
 
 
-
-
-
-
-
-
+    public ProdutosLista() {
     }
+
+    public ProdutosLista(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+}
 

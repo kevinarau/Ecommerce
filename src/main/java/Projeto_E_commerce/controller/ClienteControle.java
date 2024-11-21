@@ -2,7 +2,6 @@ package Projeto_E_commerce.controller;
 
 
 import Projeto_E_commerce.Service.ClienteService;
-
 import Projeto_E_commerce.dto.ClienteDto;
 import Projeto_E_commerce.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("cliente")
-public class ClienteController {
+public class ClienteControle {
 
     @Autowired
    private ClienteService clienteService;
