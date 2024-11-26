@@ -27,8 +27,7 @@ public class ClienteDto {
     private String cpf;
 
 
-
-    public ClienteDto(Cliente cliente ) {
+    public ClienteDto(Cliente cliente) {
         BeanUtils.copyProperties(cliente, this);
     }
 }

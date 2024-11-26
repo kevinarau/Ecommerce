@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 public class DataConfig {
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSourc = new DriverManagerDataSource();
         dataSourc.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSourc.setUrl("jdbc:mysql://localhost:3306/e_commerce?useTimezone=true&serverTimezone=UTC");
@@ -26,15 +26,15 @@ public class DataConfig {
     }
 
     @Bean
-  public JpaVendorAdapter jpaVendorAdapter(){
-      HibernateJpaVendorAdapter adapte = new HibernateJpaVendorAdapter();
-      adapte.setDatabase(Database.MYSQL);
-      adapte.setShowSql(true);
-      adapte.setGenerateDdl(true);
-      adapte.setDatabasePlatform("org.hibernate.dialect.MariaDBDialect");
-      adapte.setPrepareConnection(true);
-      return adapte;
-  }
+    public JpaVendorAdapter jpaVendorAdapter() {
+        HibernateJpaVendorAdapter adapte = new HibernateJpaVendorAdapter();
+        adapte.setDatabase(Database.MYSQL);
+        adapte.setShowSql(true);
+        adapte.setGenerateDdl(true);
+        adapte.setDatabasePlatform("org.hibernate.dialect.MariaDBDialect");
+        adapte.setPrepareConnection(true);
+        return adapte;
+    }
 }
 
 

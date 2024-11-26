@@ -20,10 +20,7 @@ public class ItemPedidos {
     private int quantidade;
 
 
-
-
-
-    public ItemPedidos(Produtos produtos, ProdutosLista produtosLista , int quantidade) {
+    public ItemPedidos(Produtos produtos, ProdutosLista produtosLista, int quantidade) {
         Id.setProdutosLista(produtosLista);
         Id.setProdutos(produtos);
         this.quantidade = quantidade;

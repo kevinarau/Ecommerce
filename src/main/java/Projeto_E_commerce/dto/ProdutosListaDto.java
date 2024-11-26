@@ -18,7 +18,7 @@ public class ProdutosListaDto {
     public ProdutosListaDto() {
     }
 
-    public ProdutosListaDto( ProdutosLista prod) {
+    public ProdutosListaDto(ProdutosLista prod) {
         this.id = prod.getId();
         this.name = prod.getName();
     }

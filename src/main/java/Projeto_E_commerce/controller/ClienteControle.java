@@ -15,20 +15,20 @@ import java.util.List;
 public class ClienteControle {
 
     @Autowired
-   private ClienteService clienteService;
+    private ClienteService clienteService;
 
 
-  @GetMapping("/list")
-    public List<ClienteDto> listaCliente (){
-      List<ClienteDto> clienteDtos = clienteService.ListaCliente();
-      return clienteDtos;
-  }
+    @GetMapping("/list")
+    public List<ClienteDto> listaCliente() {
+        List<ClienteDto> clienteDtos = clienteService.ListaCliente();
+        return clienteDtos;
+    }
 
-  @PostMapping
-    public ResponseEntity<Cliente> CriarCliente(@RequestBody ClienteDto form){
-      return ResponseEntity.ok(clienteService.CriarCliente(form));
+    @PostMapping
+    public ResponseEntity<Cliente> CriarCliente(@RequestBody ClienteDto form) {
+        return ResponseEntity.ok(clienteService.CriarCliente(form));
 
-  }
+    }
 
 
 }

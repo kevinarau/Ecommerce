@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_Cliente")
-@JsonIgnoreProperties({"hibernateLazyinitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyinitializer", "handler"})
 public class Cliente {
 
     @Id
@@ -32,8 +32,6 @@ public class Cliente {
 
     @JoinColumn(unique = true)
     private String cpf;
-
-
 
 
 }

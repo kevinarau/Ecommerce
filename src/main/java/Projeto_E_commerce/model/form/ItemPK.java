@@ -16,7 +16,7 @@ public class ItemPK {
     private Produtos produtos;
 
     @ManyToOne
-    @JoinColumn(name =  "produtos_lista_id")
+    @JoinColumn(name = "produtos_lista_id")
     private ProdutosLista produtosLista;
 
     public Produtos getProdutos() {

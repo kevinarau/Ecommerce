@@ -17,7 +17,6 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
 
-
     public Cliente CriarCliente(ClienteDto clienteDto) {
         Cliente cl = new Cliente();
         cl.setName(clienteDto.getName());
@@ -25,15 +24,15 @@ public class ClienteService {
         cl.setContato(clienteDto.getContato());
         cl.setEmail(clienteDto.getEmail());
 
-      return clienteRepository.save(cl);
+        return clienteRepository.save(cl);
 
 
     }
 
 
-    public void  atualizarCliente(Long id, ClienteDto form ) {
+    public void atualizarCliente(Long id, ClienteDto form) {
         Optional<Cliente> cli = clienteRepository.findById(id);
-        if (cli.isPresent()){
+        if (cli.isPresent()) {
             Cliente cl = cli.get();
             cl.setContato(form.getContato());
             cl.setEmail(form.getEmail());
@@ -53,10 +52,9 @@ public class ClienteService {
 
     public Cliente buscarCliente(Long id) {
         Optional<Cliente> cliente = clienteRepository.findById(id);
-       return cliente.get();
+        return cliente.get();
 
     }
-
 
 
 }

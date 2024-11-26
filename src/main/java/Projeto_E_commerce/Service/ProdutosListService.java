@@ -12,20 +12,17 @@ import java.util.List;
 @Service
 public class ProdutosListService {
 
-      @Autowired
-      private ProdutosListRepository produtosListRepository;
-
-
-
+    @Autowired
+    private ProdutosListRepository produtosListRepository;
 
 
     @Transactional(readOnly = true)
-      public List<ProdutosListaDto> ListaProdutos(){
-          List<ProdutosLista> Lista = produtosListRepository.findAll();
-         return Lista.stream().map(x -> new ProdutosListaDto(x)).toList();
+    public List<ProdutosListaDto> ListaProdutosDto() {
+        List<ProdutosLista> Lista = produtosListRepository.findAll();
+        return Lista.stream().map(x -> new ProdutosListaDto(x)).toList();
 
 
-      }
+    }
 
 
 }

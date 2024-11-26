@@ -10,13 +10,11 @@ import lombok.Data;
 public class Produtos {
 
     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+    private String name;
     private String descricao;
     private double preco;
-
-
 
 
     public Produtos() {
@@ -25,7 +23,7 @@ public class Produtos {
     public Produtos(String descricao, Long id, String name, double preco) {
         this.descricao = descricao;
         this.id = id;
-        this.nome = name;
+        this.name = name;
         this.preco = preco;
     }
 }
