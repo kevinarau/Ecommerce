@@ -1,39 +1,22 @@
 package Projeto_E_commerce.dto;
 
 
-import Projeto_E_commerce.model.Produtos;
-import Projeto_E_commerce.projection.ProjetoProdutos;
-import jakarta.persistence.Id;
 import org.springframework.stereotype.Service;
-
-import java.util.Objects;
 
 @Service
 public class ProdutosDto {
 
-
-    @Id
     private Long id;
     private String name;
     private String descricao;
     private double preco;
 
 
-    public ProdutosDto() {
-    }
-
-    public ProdutosDto(Produtos prod) {
-        this.descricao = prod.getDescricao();
-        this.id = prod.getId();
-        this.name = prod.getName();
-        this.preco = prod.getPreco();
-    }
-
-    public ProdutosDto(ProjetoProdutos produtos) {
-        this.descricao = produtos.getDescricao();
-        this.id = produtos.getId();
-        this.name = produtos.getName();
-        this.preco = produtos.getPreco();
+    public ProdutosDto(String descricao, Long id, String name, double preco) {
+        this.descricao = descricao;
+        this.id = id;
+        this.name = name;
+        this.preco = preco;
     }
 
     public String getDescricao() {
@@ -66,18 +49,5 @@ public class ProdutosDto {
 
     public void setPreco(double preco) {
         this.preco = preco;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProdutosDto that = (ProdutosDto) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
     }
 }

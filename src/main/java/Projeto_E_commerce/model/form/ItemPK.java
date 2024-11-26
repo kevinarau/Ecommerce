@@ -2,36 +2,35 @@ package Projeto_E_commerce.model.form;
 
 
 import Projeto_E_commerce.model.Cliente;
-import Projeto_E_commerce.model.Produtos;
-import Projeto_E_commerce.model.ProdutosLista;
-import jakarta.persistence.*;
-
-import java.util.List;
+import Projeto_E_commerce.model.ProdutosList;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Embeddable
 public class ItemPK {
 
     @ManyToOne
-    @JoinColumn(name = "id_produtos")
-    private Produtos produtos;
-
+    @JoinColumn(name =  "cliente_id")
+    private Cliente cliente;
     @ManyToOne
-    @JoinColumn(name = "produtos_lista_id")
-    private ProdutosLista produtosLista;
+    @JoinColumn(name =  "produtos_id")
+    private ProdutosList produtos;
 
-    public Produtos getProdutos() {
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public ProdutosList getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(Produtos produtos) {
+    public void setProdutos(ProdutosList produtos) {
         this.produtos = produtos;
-    }
-
-    public ProdutosLista getProdutosLista() {
-        return produtosLista;
-    }
-
-    public void setProdutosLista(ProdutosLista produtosLista) {
-        this.produtosLista = produtosLista;
     }
 }
