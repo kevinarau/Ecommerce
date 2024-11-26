@@ -32,8 +32,8 @@ public class ProdutosDto {
     public ProdutosDto(ProjetoProdutos produtos) {
         this.descricao = produtos.getDescricao();
         this.id = produtos.getId();
-        this.name = getName();
-        this.preco = getPreco();
+        this.name = produtos.getName();
+        this.preco = produtos.getPreco();
     }
 
     public String getDescricao() {

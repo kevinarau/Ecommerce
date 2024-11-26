@@ -5,6 +5,7 @@ import Projeto_E_commerce.model.Produtos;
 import Projeto_E_commerce.projection.ProjetoProdutos;
 import Projeto_E_commerce.repository.ProdutosRespository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +29,8 @@ public class ProdutosService {
 
     public List<ProdutosDto> ListaProdutos(Long Id) {
         List<ProjetoProdutos> prod = produtosRespository.searchByList(Id);
-        return prod.stream().map(x -> new ProdutosDto(x)).toList();
+         return  prod.stream().map(x -> new ProdutosDto(x)).toList();
+
     }
 
 

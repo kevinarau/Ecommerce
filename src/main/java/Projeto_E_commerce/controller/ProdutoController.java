@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/produtos")
-public class ProdutoControle {
+@RequestMapping("/products")
+public class ProdutoController {
 
     @Autowired
     public ProdutosService produtosService;
@@ -23,12 +23,12 @@ public class ProdutoControle {
         return ResponseEntity.ok(produtos);
 
     }
-    @GetMapping
+    @GetMapping("/{Id}")
     public List<ProdutosDto> Lista(@PathVariable Long Id) {
         return produtosService.ListaProdutos(Id);
     }
 
-    @GetMapping("/lista")
+    @GetMapping("/list")
     public List<Produtos> produtos(){
         return produtosService.Produtos();
     }
