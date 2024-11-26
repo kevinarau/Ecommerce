@@ -1,8 +1,7 @@
 package Projeto_E_commerce.model.form;
 
-import Projeto_E_commerce.model.Cliente;
 import Projeto_E_commerce.model.Produtos;
-import Projeto_E_commerce.model.ProdutosLista;
+import Projeto_E_commerce.model.ProdutosList;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -20,8 +19,8 @@ public class ItemPedidos {
     private int quantidade;
 
 
-    public ItemPedidos(Produtos produtos, ProdutosLista produtosLista, int quantidade) {
-        Id.setProdutosLista(produtosLista);
+    public ItemPedidos(Produtos produtos, ProdutosList produtosLista, int quantidade) {
+        Id.setProdutosList(produtosLista);
         Id.setProdutos(produtos);
         this.quantidade = quantidade;
     }

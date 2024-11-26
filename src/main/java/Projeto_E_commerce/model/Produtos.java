@@ -6,7 +6,6 @@ import lombok.Data;
 
 
 @Data
-@AllArgsConstructor
 @Entity
 @Table(name = "tb_produtos")
 public class Produtos {
@@ -18,4 +17,6 @@ public class Produtos {
     private String descricao;
     private double preco;
 
+    public Produtos() {
+    }
 }

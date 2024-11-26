@@ -25,12 +25,12 @@ public class ProdutoController {
     }
     @GetMapping("/{Id}")
     public List<ProdutosDto> Lista(@PathVariable Long Id) {
-        return produtosService.ListaProdutos(Id);
+        return produtosService.produtosDtoList(Id);
     }
 
     @GetMapping("/list")
     public List<Produtos> produtos(){
-        return produtosService.Produtos();
+        return produtosService.produtos();
     }
 
 

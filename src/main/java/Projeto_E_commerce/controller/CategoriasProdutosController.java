@@ -26,12 +26,12 @@ public class CategoriasProdutosController {
 
     @GetMapping
     public List<ProdutosListaDto> listaProdutosDto() {
-        return produtosListService.ListaProdutosDto();
+        return produtosListService.ListaProdutos();
     }
 
     @GetMapping("/{listId}/prod")
     public ResponseEntity<List<ProdutosDto>> produtos(@PathVariable Long listId) {
-        List<ProdutosDto> produtosDtos = produtosService.ListaProdutos(listId);
+        List<ProdutosDto> produtosDtos = produtosService.produtosDtoList(listId);
         return ResponseEntity.ok(produtosDtos);
     }
 

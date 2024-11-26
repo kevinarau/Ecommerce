@@ -4,13 +4,11 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
-import java.util.List;
-
 
 @Data
 @Entity
 @Table(name = "tb_lista_produtos")
-public class ProdutosLista {
+public class ProdutosList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +17,10 @@ public class ProdutosLista {
     private String name;
 
 
-    public ProdutosLista() {
+    public ProdutosList() {
     }
 
-    public ProdutosLista(Long id, String name) {
+    public ProdutosList(Long id, String name) {
         this.id = id;
         this.name = name;
     }

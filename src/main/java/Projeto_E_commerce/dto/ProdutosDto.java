@@ -1,6 +1,8 @@
 package Projeto_E_commerce.dto;
 
 
+import Projeto_E_commerce.model.Produtos;
+import Projeto_E_commerce.projection.ProjetoProdutos;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,13 +13,24 @@ public class ProdutosDto {
     private String descricao;
     private double preco;
 
-
-    public ProdutosDto(String descricao, Long id, String name, double preco) {
-        this.descricao = descricao;
-        this.id = id;
-        this.name = name;
-        this.preco = preco;
+    public ProdutosDto() {
     }
+
+    public ProdutosDto(Produtos prod) {
+        this.descricao = prod.getDescricao();
+        this.id = prod.getId();
+        this.name = prod.getName();
+        this.preco = prod.getPreco();
+    }
+
+
+    public ProdutosDto(ProjetoProdutos produtos) {
+        this.descricao = produtos.getDescricao();
+        this.id = produtos.getId();
+        this.name = produtos.getName();
+        this.preco = produtos.getPreco();
+    }
+
 
     public String getDescricao() {
         return descricao;
