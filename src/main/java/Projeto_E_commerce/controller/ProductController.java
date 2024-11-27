@@ -11,27 +11,35 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-public class ProdutoController {
+public class ProductController {
 
     @Autowired
     public ProdutosService produtosService;
 
 
+    @GetMapping("/{Id}")
+    public List<ProdutosDto> Lista(@PathVariable Long Id) {
+        return produtosService.productsDtoList(Id);
+    }
+
     @PostMapping
-    public ResponseEntity<Produtos> InserirProduto(@RequestBody ProdutosDto prod) {
-        Produtos produtos = produtosService.inserirProdutos(prod);
+    public ResponseEntity<Produtos> InsertProduct(Long id,@RequestBody ProdutosDto prod) {
+        Produtos produtos = produtosService.insertProducts(id, prod);
         return ResponseEntity.ok(produtos);
 
     }
-    @GetMapping("/{Id}")
-    public List<ProdutosDto> Lista(@PathVariable Long Id) {
-        return produtosService.produtosDtoList(Id);
-    }
 
-    @GetMapping("/list")
+    @GetMapping
     public List<Produtos> produtos(){
         return produtosService.produtos();
     }
+
+  @PutMapping("/{id}")
+    public ResponseEntity<Produtos> UpdateProduct(@PathVariable Long id, @RequestBody ProdutosDto produtosDto){
+      Produtos produtos = produtosService.UpdateProduct(id, produtosDto);
+      return  ResponseEntity.ok(produtos);
+    }
+
 
 
 }
