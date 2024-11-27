@@ -31,7 +31,7 @@ public class CategoriasProdutosController {
 
     @GetMapping("/{listId}/prod")
     public ResponseEntity<List<ProdutosDto>> produtos(@PathVariable Long listId) {
-        List<ProdutosDto> produtosDtos = produtosService.produtosDtoList(listId);
+        List<ProdutosDto> produtosDtos = produtosService.productsDtoList(listId);
         return ResponseEntity.ok(produtosDtos);
     }
 
