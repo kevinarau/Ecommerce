@@ -7,7 +7,6 @@ import Projeto_E_commerce.model.form.ItemPedidos;
 import Projeto_E_commerce.projection.ProjetoProdutos;
 import Projeto_E_commerce.repository.ProdutosListRepository;
 import Projeto_E_commerce.repository.ProdutosRespository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,21 +21,18 @@ public class ProdutosService {
     @Autowired
     private ProdutosRespository produtosRespository;
 
-    @Autowired
-    private ProdutosListRepository produtosListRepository;
 
 
-    public Produtos insertProducts(Long id, ProdutosDto produtosDto) {
-        Produtos prod = new Produtos();
-            prod.setId(produtosDto.getId());
-            prod.setName(produtosDto.getName());
-            prod.setDescricao(produtosDto.getDescricao());
-            prod.setPreco(produtosDto.getPreco());
+    public Produtos insertProducts( ProdutosDto produtosDto) {
+        Produtos produto = new Produtos();
 
+        produto.setId(produtosDto.getId());
+        produto.setName(produtosDto.getName());
+        produto.setDescricao(produtosDto.getDescricao());
+        produto.setPreco(produtosDto.getPreco());
+        return  produtosRespository.save(produto);
 
-            return produtosRespository.save(prod);
-        }
-
+    }
 
     @Transactional(readOnly = true)
     public List<ProdutosDto> productsDtoList(Long listId){
@@ -59,6 +55,11 @@ public class ProdutosService {
         }
         return produtosRespository.save(products.get());
 
+    }
+
+    public Produtos DeleteProduct(Long id){
+            produtosRespository.deleteById(id);
+        return null;
     }
 
 

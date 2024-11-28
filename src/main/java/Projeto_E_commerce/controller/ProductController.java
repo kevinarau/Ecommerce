@@ -3,6 +3,7 @@ package Projeto_E_commerce.controller;
 import Projeto_E_commerce.Service.ProdutosService;
 import Projeto_E_commerce.dto.ProdutosDto;
 import Projeto_E_commerce.model.Produtos;
+import Projeto_E_commerce.model.ProdutosList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,8 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Produtos> InsertProduct(Long id,@RequestBody ProdutosDto prod) {
-        Produtos produtos = produtosService.insertProducts(id, prod);
+    public ResponseEntity<Produtos> InsertProduct( @RequestBody ProdutosDto prod) {
+        Produtos produtos = produtosService.insertProducts( prod);
         return ResponseEntity.ok(produtos);
 
     }
@@ -41,5 +42,9 @@ public class ProductController {
     }
 
 
+    @DeleteMapping("/{id}")
+    public Produtos delete(@PathVariable Long id){
+       return produtosService.DeleteProduct(id);
+    }
 
 }

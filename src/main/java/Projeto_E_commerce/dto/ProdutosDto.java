@@ -29,6 +29,7 @@ public class ProdutosDto {
         this.id = produtos.getId();
         this.name = produtos.getName();
         this.preco = produtos.getPreco();
+
     }
 
 

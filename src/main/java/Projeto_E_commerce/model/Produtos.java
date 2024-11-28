@@ -17,8 +17,7 @@ public class Produtos {
     private String descricao;
     private double preco;
 
-    @ManyToOne
-    private ProdutosList produtosList;
+
 
     public Produtos() {
     }
