@@ -1,11 +1,9 @@
 package Projeto_E_commerce.Service;
 
 import Projeto_E_commerce.dto.ProdutosDto;
+import Projeto_E_commerce.infra.ProdutoDuplicadoException;
 import Projeto_E_commerce.model.Produtos;
-import Projeto_E_commerce.model.ProdutosList;
-import Projeto_E_commerce.model.form.ItemPedidos;
 import Projeto_E_commerce.projection.ProjetoProdutos;
-import Projeto_E_commerce.repository.ProdutosListRepository;
 import Projeto_E_commerce.repository.ProdutosRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,16 +21,26 @@ public class ProdutosService {
 
 
 
-    public Produtos insertProducts( ProdutosDto produtosDto) {
-        Produtos produto = new Produtos();
 
-        produto.setId(produtosDto.getId());
-        produto.setName(produtosDto.getName());
-        produto.setDescricao(produtosDto.getDescricao());
-        produto.setPreco(produtosDto.getPreco());
-        return  produtosRespository.save(produto);
+    @Transactional
+    public Produtos insertProduct(Long id, ProdutosDto produto) {
+        Produtos products = new Produtos();
 
+        products.setName(produto.getName());
+        products.setDescricao(produto.getDescricao());
+        products.setPreco(produto.getPreco());
+
+        Optional<Produtos> productsExist = produtosRespository.findById(id);
+        if (productsExist.isPresent()) {
+            try {
+                throw new ProdutoDuplicadoException("Já existe um produto com o nome " + products.getId());
+            } catch (ProdutoDuplicadoException e) {
+                throw new RuntimeException("Erro ao inserir o produto no banco de dados", e);
+            }
+        }
+       return produtosRespository.save(products);
     }
+
 
     @Transactional(readOnly = true)
     public List<ProdutosDto> productsDtoList(Long listId){
@@ -40,8 +48,9 @@ public class ProdutosService {
         return  produtos.stream().map(x -> new ProdutosDto(x)).toList();
     }
 
+
     @Transactional(readOnly = true)
-    public List<Produtos> produtos(){
+    public List<Produtos> products(){
         return produtosRespository.findAll();
     }
 

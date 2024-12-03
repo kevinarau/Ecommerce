@@ -2,8 +2,8 @@ package Projeto_E_commerce.controller;
 
 import Projeto_E_commerce.Service.ProdutosService;
 import Projeto_E_commerce.dto.ProdutosDto;
+import Projeto_E_commerce.infra.ProdutoDuplicadoException;
 import Projeto_E_commerce.model.Produtos;
-import Projeto_E_commerce.model.ProdutosList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,16 +23,15 @@ public class ProductController {
         return produtosService.productsDtoList(Id);
     }
 
-    @PostMapping
-    public ResponseEntity<Produtos> InsertProduct( @RequestBody ProdutosDto prod) {
-        Produtos produtos = produtosService.insertProducts( prod);
-        return ResponseEntity.ok(produtos);
-
+    @PostMapping("/{id}")
+    public ResponseEntity<Produtos> InsertProduct( @PathVariable Long id,@RequestBody ProdutosDto prod) throws ProdutoDuplicadoException {
+        Produtos produtos = produtosService.insertProduct(id, prod);
+            return ResponseEntity.ok(produtos);
     }
 
     @GetMapping
     public List<Produtos> produtos(){
-        return produtosService.produtos();
+        return produtosService.products();
     }
 
   @PutMapping("/{id}")

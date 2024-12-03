@@ -25,7 +25,7 @@ public class ClienteControle {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> CriarCliente(@RequestBody ClienteDto form) {
+    public ResponseEntity<Cliente> CadastrarCliente (@RequestBody ClienteDto form) {
         return ResponseEntity.ok(clienteService.CriarCliente(form));
 
     }

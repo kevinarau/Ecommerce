@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProdutosRespository extends JpaRepository<Produtos, Long> {
 
@@ -22,5 +23,7 @@ public interface ProdutosRespository extends JpaRepository<Produtos, Long> {
     ORDER BY ip.quantidade 
     """)
     List<ProjetoProdutos> searchByList(Long listId);
+
+
 
 }

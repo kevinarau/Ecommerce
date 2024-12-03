@@ -2,6 +2,7 @@ package Projeto_E_commerce.Service;
 
 import Projeto_E_commerce.dto.ClienteDto;
 import Projeto_E_commerce.model.Cliente;
+import Projeto_E_commerce.model.Produtos;
 import Projeto_E_commerce.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,6 +56,8 @@ public class ClienteService {
         return cliente.get();
 
     }
+
+
 
 
 }
