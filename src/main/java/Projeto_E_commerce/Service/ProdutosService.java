@@ -25,20 +25,16 @@ public class ProdutosService {
 
     @Transactional
     public Produtos insertProduct(Long id, ProdutosDto produto) {
-        Produtos products = new Produtos();
 
-        products.setName(produto.getName());
-        products.setDescricao(produto.getDescricao());
-        products.setPreco(produto.getPreco());
-
-        Optional<Produtos> productsExist = produtosRespository.findById(id);
-        if (productsExist.isPresent()) {
-           /* try {
-                throw new ProdutoDuplicadoException("Já existe um produto com o nome " + products.getId());
-            } catch (ProdutoDuplicadoException e) {
-                throw new RuntimeException("Erro ao inserir o produto no banco de dados", e);
-            }*/
+        if (produtosRespository.findById(id).isPresent()) {
+            throw new IllegalStateException("Produto com o ID já existe.");
         }
+            Produtos products = new Produtos();
+
+            products.setName(produto.getName());
+            products.setDescricao(produto.getDescricao());
+            products.setPreco(produto.getPreco());
+
        return produtosRespository.save(products);
     }
 
@@ -47,8 +43,10 @@ public class ProdutosService {
 
    @Transactional(readOnly = true)
     public List<ProdutosDto> productsDtoList(Long listId){
-        List<ProjetoProdutos> produtos = produtosRespository.searchByList(listId);
-        return  produtos.stream().map(x -> new ProdutosDto(x)).toList();
+             List<ProjetoProdutos> produtos = produtosRespository.searchByList(listId);
+           return  produtos.stream()
+                          .map(x -> new ProdutosDto(x))
+                            .toList();
     }
 
 

@@ -4,6 +4,10 @@ package Projeto_E_commerce.dto;
 import Projeto_E_commerce.model.Produtos;
 import Projeto_E_commerce.projection.ProjetoProdutos;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,8 +15,16 @@ public class ProdutosDto {
 
     @Id
     private Long id;
+    @NotEmpty(message = "o campo obrigatorio")
+    @Size(min = 5,max = 100, message = "o campo tem que ter de 5 á 100 caracteres")
     private String name;
+
+    @NotEmpty(message = "o campo obrigatorio")
+    @Size(min = 5,max = 100, message = "o campo tem que ter de 5 á 100 caracteres")
     private String descricao;
+
+    @NotNull(message = "Preencha o campo corretamente.")
+    @Positive(message = "${validatedValue}' precisa ser positivo.")
     private double preco;
 
     public ProdutosDto() {

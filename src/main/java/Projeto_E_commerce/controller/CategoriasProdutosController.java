@@ -26,6 +26,7 @@ public class CategoriasProdutosController {
 
     @GetMapping
     public List<ProdutosListaDto> listaProdutosDto() {
+
         return produtosListService.ListaProdutos();
     }
 

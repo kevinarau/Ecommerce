@@ -24,11 +24,15 @@ public class ClienteControle {
         return clienteDtos;
     }
 
-    @PostMapping
-    public ResponseEntity<Cliente> CadastrarCliente (@RequestBody ClienteDto form) {
-        return ResponseEntity.ok(clienteService.CriarCliente(form));
+
+
+    @PostMapping("/{id}")
+    public ResponseEntity<Cliente> CadastrarCliente (@PathVariable Long id,@RequestBody ClienteDto form) {
+        return ResponseEntity.ok(clienteService.CriarCliente(id, form));
 
     }
+
+
 
 
 }
