@@ -17,7 +17,7 @@ public class DataConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSourc = new DriverManagerDataSource();
         dataSourc.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourc.setUrl("jdbc:mysql://localhost:3306/e_commerce?useTimezone=true&serverTimezone=UTC");
+        dataSourc.setUrl("jdbc:mysql://localhost:3306/ecommerce?useTimezone=true&serverTimezone=UTC");
         dataSourc.setUsername("root");
         dataSourc.setPassword("Roseli199702");
         return dataSourc;

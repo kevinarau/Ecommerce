@@ -7,22 +7,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_lista_produtos")
+@Table(name = "lista_produto")
 public class ProdutosList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idProdutosLista;
 
     private String name;
 
-
     public ProdutosList() {
     }
-
     public ProdutosList(Long id, String name) {
-        this.id = id;
+        this.idProdutosLista = id;
         this.name = name;
     }
+
+
 }
+
 

@@ -16,22 +16,25 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_Cliente")
+@Table(name = "Cliente")
 @JsonIgnoreProperties({"hibernateLazyinitializer", "handler"})
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idCliente;
 
     private String name;
 
+
     private String contato;
 
+    @JoinColumn(unique = true)
     private String email;
 
     @JoinColumn(unique = true)
     private String cpf;
+
 
 
 }

@@ -12,15 +12,14 @@ public interface ProdutosRespository extends JpaRepository<Produtos, Long> {
 
     @Query(nativeQuery = true, value = """
     SELECT 
-        p.id, 
+        p.id_produtos, 
         p.name, 
         p.descricao, 
-        p.preco,
-        ip.quantidade
-    FROM tb_produtos p
-    INNER JOIN tb_item_pedidos ip ON p.id = ip.id_produtos
-    WHERE ip.produtos_lista_id = :listId
-    ORDER BY ip.quantidade 
+        p.preco
+        FROM produtos p
+    INNER JOIN lista_produto ip ON p.lista_id = ip.id_produtos_lista
+    WHERE ip.id_produtos_lista = :listId
+    ORDER BY p.id_produtos
     """)
     List<ProjetoProdutos> searchByList(Long listId);
 

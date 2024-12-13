@@ -2,7 +2,7 @@ package Projeto_E_commerce.controller;
 
 import Projeto_E_commerce.Service.ProdutosService;
 import Projeto_E_commerce.dto.ProdutosDto;
-import Projeto_E_commerce.infra.ProdutoDuplicadoException;
+
 import Projeto_E_commerce.model.Produtos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +18,13 @@ public class ProductController {
     public ProdutosService produtosService;
 
 
-    @GetMapping("/{Id}")
+   /* @GetMapping("/{Id}")
     public List<ProdutosDto> Lista(@PathVariable Long Id) {
         return produtosService.productsDtoList(Id);
-    }
+    }*/
 
-    @PostMapping("/{id}")
-    public ResponseEntity<Produtos> InsertProduct( @PathVariable Long id,@RequestBody ProdutosDto prod) throws ProdutoDuplicadoException {
+    @PostMapping("/{idLista}")
+    public ResponseEntity<Produtos> InsertProduct( @PathVariable Long id,@RequestBody ProdutosDto prod)  {
         Produtos produtos = produtosService.insertProduct(id, prod);
             return ResponseEntity.ok(produtos);
     }
@@ -34,14 +34,14 @@ public class ProductController {
         return produtosService.products();
     }
 
-  @PutMapping("/{id}")
+  @PutMapping("/{idLista}")
     public ResponseEntity<Produtos> UpdateProduct(@PathVariable Long id, @RequestBody ProdutosDto produtosDto){
       Produtos produtos = produtosService.UpdateProduct(id, produtosDto);
       return  ResponseEntity.ok(produtos);
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idLista}")
     public Produtos delete(@PathVariable Long id){
        return produtosService.DeleteProduct(id);
     }
