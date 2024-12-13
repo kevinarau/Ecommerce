@@ -7,16 +7,21 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_produtos")
+@Table(name = "produtos")
 public class Produtos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idProdutos;
+
+    @JoinColumn(unique = true)
     private String name;
     private String descricao;
     private double preco;
 
+    @ManyToOne
+    @JoinColumn (name = "lista_id")
+     private  ProdutosList produtos;
 
 
     public Produtos() {

@@ -3,11 +3,13 @@ package Projeto_E_commerce.dto;
 
 import Projeto_E_commerce.model.Produtos;
 import Projeto_E_commerce.projection.ProjetoProdutos;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProdutosDto {
 
+    @Id
     private Long id;
     private String name;
     private String descricao;
@@ -18,7 +20,7 @@ public class ProdutosDto {
 
     public ProdutosDto(Produtos prod) {
         this.descricao = prod.getDescricao();
-        this.id = prod.getId();
+        this.id = prod.getIdProdutos();
         this.name = prod.getName();
         this.preco = prod.getPreco();
     }

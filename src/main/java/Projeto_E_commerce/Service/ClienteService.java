@@ -7,6 +7,7 @@ import Projeto_E_commerce.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.management.Attribute;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,15 +19,15 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
 
-    public Cliente CriarCliente(ClienteDto clienteDto) {
-        Cliente cl = new Cliente();
-        cl.setName(clienteDto.getName());
-        cl.setCpf(clienteDto.getCpf());
-        cl.setContato(clienteDto.getContato());
-        cl.setEmail(clienteDto.getEmail());
+    public Cliente CriarCliente(ClienteDto cliente) {
 
-        return clienteRepository.save(cl);
+            Cliente cl = new Cliente();
+            cl.setName(cliente.getName());
+            cl.setCpf(cliente.getCpf());
+            cl.setContato(cliente.getContato());
+            cl.setEmail(cliente.getEmail());
 
+            return clienteRepository.save(cl);
 
     }
 
