@@ -5,49 +5,61 @@ Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spr
 
 ### 📋 Funcionalidades 
 
-ºGestão de Produtos: Criar, listar, atualizar e excluir produtos.
+     ºGestão de Produtos: Criar, listar, atualizar e excluir produtos.
 
-ºGestão de Categorias: Organizar produtos por categorias.
+     ºGestão de Categorias: Organizar produtos por categorias.
 
-ºIntegração com MySQL: Persistência e gerenciamento de dados.
+     ºIntegração com MySQL: Persistência e gerenciamento de dados.
 
 ### 🛠️ Tecnologias Utilizadas 
 
-ºLinguagem: Java 17+
+     ºLinguagem: Java 17+
 
-ºFramework: Spring Boot 3.2+
+     ºFramework: Spring Boot 3.2+
 
-ºSpring Web (para APIs RESTful)
+     ºSpring Web (para APIs RESTful)
 
-ºSpring Data JPA (para interação com o banco de dados)
+     ºSpring Data JPA (para interação com o banco de dados)
 
-ºBanco de Dados: MySQL
+    ºBanco de Dados: MySQL
 
-ºFerramentas adicionais: Maven (gerenciamento de dependências)
+     ºFerramentas adicionais: Maven (gerenciamento de dependências)
 
-Postman (testes de API)
+     °Postman (testes de API)
 
-Dados (DTOs)
+     ºDados (DTOs)
+     
+     ºHibernate(validator)
 
 ### 📖 Endpoints Principais 
 
 ºProdutos
 
-GET /products: Lista todos os produtos.
+     GET /products: Lista todos os produtos.
 
-POST /products: Cria um novo produto.
+     POST /products: Cria um novo produto.
 
-GET /products/{id}: Retorna um produto pelo ID.
+    GET /products/{id}: Retorna um produto pelo ID.
 
-PUT /products/{id}: Atualiza um produto.
+    PUT /products/{id}: Atualiza um produto.
 
-DELETE /products/{id}: Exclui um produto.
+    DELETE /products/{id}: Exclui um produto.
 
 ºCategorias
 
-GET /categories: Lista todas as categorias.
+    GET /categories: Lista todas as categorias.
 
-POST /categories: Cria uma nova categoria.
+    POST /categories: Cria uma nova categoria.
+
+ºCliente
+
+      GET /cliente: Lista todos os cliente.
+
+     POST /cliente: Cadastra um novo cliente.
+
+      GET /cliente/{id}: Retorna produtos do cliente pelo ID do cliente.
+
+      PUT /cliente/{id}: Atualiza um cliente.
 
 
 ### 📚 Estrutura do Projeto
