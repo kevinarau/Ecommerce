@@ -1,24 +1,24 @@
 package Projeto_E_commerce.dto;
 
 
-import Projeto_E_commerce.model.Cliente;
 
+
+
+import Projeto_E_commerce.model.User;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 
 @Data
 @NoArgsConstructor
 @Service
-public class ClienteDto {
+public class UserDto {
 
     @Id
     private Long id;
@@ -37,11 +37,11 @@ public class ClienteDto {
     private String cpf;
 
 
-    public ClienteDto(Cliente cliente) {
-       this.id = cliente.getIdCliente();
-       this.name = cliente.getName();
-       this.contato = cliente.getContato();
-       this.email = cliente.getEmail();
-       this.cpf = cliente.getCpf();
+    public UserDto(User userDto) {
+       this.id = userDto.getIdUser();
+       this.name = userDto.getName();
+       this.contato = userDto.getContact();
+       this.email = userDto.getEmail();
+       this.cpf = userDto.getCpf();
     }
 }

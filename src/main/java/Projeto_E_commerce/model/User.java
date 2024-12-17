@@ -1,33 +1,29 @@
 package Projeto_E_commerce.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Cliente")
+@Table(name = "User")
 @JsonIgnoreProperties({"hibernateLazyinitializer", "handler"})
-public class Cliente {
+public class User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long idUser;
 
     private String name;
 
 
-    private String contato;
+    private String contact;
 
     @JoinColumn(unique = true)
     private String email;

@@ -1,9 +1,9 @@
 package Projeto_E_commerce.controller;
 
-import Projeto_E_commerce.Service.ProdutosService;
-import Projeto_E_commerce.dto.ProdutosDto;
+import Projeto_E_commerce.Service.ProductsService;
+import Projeto_E_commerce.dto.ProductsDto;
 
-import Projeto_E_commerce.model.Produtos;
+import Projeto_E_commerce.model.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,35 +15,35 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    public ProdutosService produtosService;
+    public ProductsService productsService;
 
 
-   /* @GetMapping("/{Id}")
-    public List<ProdutosDto> Lista(@PathVariable Long Id) {
-        return produtosService.productsDtoList(Id);
+   /*@GetMapping("/{Id}")
+    public List<ProductsDto> Lista(@PathVariable Long Id) {
+        return productsService.productsDtoList(Id);
     }*/
 
-    @PostMapping("/{idLista}")
-    public ResponseEntity<Produtos> InsertProduct( @PathVariable Long id,@RequestBody ProdutosDto prod)  {
-        Produtos produtos = produtosService.insertProduct(id, prod);
-            return ResponseEntity.ok(produtos);
+    @PostMapping("/{id}")
+    public ResponseEntity<Products> InsertProduct(@PathVariable Long id, @RequestBody ProductsDto produto)  {
+        return ResponseEntity.ok(productsService.insertProduct(id, produto));
+
     }
 
     @GetMapping
-    public List<Produtos> produtos(){
-        return produtosService.products();
+    public List<Products> products(){
+        return productsService.products();
     }
 
-  @PutMapping("/{idLista}")
-    public ResponseEntity<Produtos> UpdateProduct(@PathVariable Long id, @RequestBody ProdutosDto produtosDto){
-      Produtos produtos = produtosService.UpdateProduct(id, produtosDto);
-      return  ResponseEntity.ok(produtos);
+  @PutMapping("/{id}")
+    public ResponseEntity<Products> UpdateProduct(@PathVariable Long id, @RequestBody ProductsDto productsDto){
+      Products products = productsService.UpdateProduct(id, productsDto);
+      return  ResponseEntity.ok(products);
     }
 
 
-    @DeleteMapping("/{idLista}")
-    public Produtos delete(@PathVariable Long id){
-       return produtosService.DeleteProduct(id);
+    @DeleteMapping("/{id}")
+    public Products delete(@PathVariable Long id){
+       return productsService.DeleteProduct(id);
     }
 
 }

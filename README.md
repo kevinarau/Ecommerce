@@ -1,13 +1,13 @@
 
 ## E-COMMERCE API
 
-Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spring Framework, Spring Data JPA e MySQL. A aplicação permite gerenciar produtos, categorias, Cliente. E é um projeto em evolução.
+Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spring Framework, Spring Data JPA e MySQL. A aplicação permite gerenciar products, categorias, Cliente. E é um projeto em evolução.
 
 ### 📋 Funcionalidades 
 
-ºGestão de Produtos: Criar, listar, atualizar e excluir produtos.
+ºGestão de Produtos: Criar, listar, atualizar e excluir products.
 
-ºGestão de Categorias: Organizar produtos por categorias.
+ºGestão de Categorias: Organizar products por categorias.
 
 ºIntegração com MySQL: Persistência e gerenciamento de dados.
 
@@ -33,7 +33,7 @@ Dados (DTOs)
 
 ºProdutos
 
-GET /products: Lista todos os produtos.
+GET /products: Lista todos os products.
 
 POST /products: Cria um novo produto.
 
