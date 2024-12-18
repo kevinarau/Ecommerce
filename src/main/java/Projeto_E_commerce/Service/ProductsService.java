@@ -4,7 +4,8 @@ import Projeto_E_commerce.dto.ProductsDto;
 
 import Projeto_E_commerce.model.Products;
 
-import Projeto_E_commerce.repository.ProductsListRepository;
+
+
 import Projeto_E_commerce.repository.ProductsRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,7 @@ public class ProductsService {
     @Autowired
     private ProductsRespository productsRespository;
 
-    @Autowired
-    private ProductsListRepository productsListRepository;
+
 
 
 
@@ -43,13 +43,13 @@ public class ProductsService {
 
 
 
-  /* @Transactional(readOnly = true)
+   @Transactional(readOnly = true)
     public List<ProductsDto> productsDtoList(Long listId){
-             List<ProjectProducts> products = productsRespository.searchByList(listId);
+             List<Products> products = productsRespository.searchByList(listId);
            return  products.stream()
-                          .map(x -> new ProductsDto(x))
+                          .map(x-> new ProductsDto(x))
                             .toList();
-    }*/
+    }
 
 
     @Transactional(readOnly = true)
@@ -69,8 +69,6 @@ public class ProductsService {
              return productsRespository.save(products);
 
     }
-
-
 
 
     public Products DeleteProduct(Long id){

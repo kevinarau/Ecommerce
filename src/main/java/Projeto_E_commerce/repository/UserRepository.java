@@ -1,8 +1,10 @@
 package Projeto_E_commerce.repository;
 
 
+
+import Projeto_E_commerce.Projection.ProjectProducts;
 import Projeto_E_commerce.model.User;
-import Projeto_E_commerce.projection.ProjectProducts;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,19 +16,18 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 
-    /*@Query(nativeQuery = true, value = """
+    @Query(nativeQuery = true, value = """
                SELECT   pro.name AS  name,
                           pro.description AS description,
-                            pro.preco AS preco,
-                              en.amount AS amount
-            FROM lista_cliente en
-            INNER JOIN customer cl ON en.cliente_id = cl.cliente_id
-                INNER JOIN lista_produto p ON p.id_produtos_lista = en.produtos_id
-                     INNER JOIN products pro ON pro.lista_id = p.id_produtos_lista
-                WHERE cl.cliente_id = :clienteId
-             GROUP BY cl.name,en.amount,pro.name,pro.description,pro.preco;
+                            pro.price AS price,
+                            en.amount AS amount
+            FROM list_User en
+             INNER JOIN user u ON en.user_id = u.id_user
+             INNER JOIN products pro ON pro.id_product = en.products_id
+              WHERE u.id_user = :UserId
+             GROUP BY u.name,pro.name,en.amount,pro.description,pro.price;
             """)
-    public List<ProjectProducts> productSelected(@Param("clienteId") Long clienteId);*/
+    List<ProjectProducts> productSelected(@Param("UserId") Long UserId);
 
 }
 

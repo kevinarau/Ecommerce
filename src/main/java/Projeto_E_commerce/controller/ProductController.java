@@ -18,15 +18,9 @@ public class ProductController {
     public ProductsService productsService;
 
 
-   /*@GetMapping("/{Id}")
+   @GetMapping("/{Id}")
     public List<ProductsDto> Lista(@PathVariable Long Id) {
         return productsService.productsDtoList(Id);
-    }*/
-
-    @PostMapping("/{id}")
-    public ResponseEntity<Products> InsertProduct(@PathVariable Long id, @RequestBody ProductsDto produto)  {
-        return ResponseEntity.ok(productsService.insertProduct(id, produto));
-
     }
 
     @GetMapping
@@ -34,7 +28,14 @@ public class ProductController {
         return productsService.products();
     }
 
-  @PutMapping("/{id}")
+    @PostMapping("/{id}")
+    public ResponseEntity<Products> InsertProduct(@PathVariable Long id, @RequestBody ProductsDto produto)  {
+        return ResponseEntity.ok(productsService.insertProduct(id, produto));
+
+    }
+
+
+    @PutMapping("/{id}")
     public ResponseEntity<Products> UpdateProduct(@PathVariable Long id, @RequestBody ProductsDto productsDto){
       Products products = productsService.UpdateProduct(id, productsDto);
       return  ResponseEntity.ok(products);
