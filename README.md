@@ -1,66 +1,53 @@
 
-## E-COMMERCE API
+# E-COMMERCE API
 
 Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spring Framework, Spring Data JPA e MySQL. A aplicação permite gerenciar products, categorias, Cliente. E é um projeto em evolução.
 
-### 📋 Funcionalidades 
+## 📋 Funcionalidades 
 
-ºGestão de Produtos: Criar, listar, atualizar e excluir products.
+     -> Gestão de Produtos: Criar, listar, atualizar e excluir products.
+     -> Gestão de Categorias: Organizar products por categorias.
+     -> Integração com MySQL: Persistência e gerenciamento de dados.
 
-ºGestão de Categorias: Organizar products por categorias.
+## 🛠️ Tecnologias Utilizadas 
 
-ºIntegração com MySQL: Persistência e gerenciamento de dados.
+         -> Linguagem: Java 17+
+         -> Framework: Spring Boot 3.2+
+         -> Spring Web (para APIs RESTful)
+         -> Spring Data JPA (para interação com o banco de dados)
+         -> Banco de Dados: MySQL
+         -> Ferramentas adicionais: Maven (gerenciamento de dependências)
+         -> Postman (testes de API)
+         -> Objetos de Transferência de Dados (DTOs)
 
-### 🛠️ Tecnologias Utilizadas 
+  ## 📖 Endpoints Principais 
 
-ºLinguagem: Java 17+
+<h3>Produtos</h3>
 
-ºFramework: Spring Boot 3.2+
+      GET /products: Lista todos os products.
+      POST /products: Cria um novo produto.
+      GET /products/{id}: Retorna um produto pelo ID.
+      PUT /products/{id}: Atualiza um produto.
+      DELETE /products/{id}: Exclui um produto.
 
-ºSpring Web (para APIs RESTful)
+<h3>Lista de Produtos</h3>
 
-ºSpring Data JPA (para interação com o banco de dados)
-
-ºBanco de Dados: MySQL
-
-ºFerramentas adicionais: Maven (gerenciamento de dependências)
-
-Postman (testes de API)
-
-Dados (DTOs)
-
-### 📖 Endpoints Principais 
-
-ºProdutos
-
-GET /products: Lista todos os products.
-
-POST /products: Cria um novo produto.
-
-GET /products/{id}: Retorna um produto pelo ID.
-
-PUT /products/{id}: Atualiza um produto.
-
-DELETE /products/{id}: Exclui um produto.
-
-ºCategorias
-
-GET /categories: Lista todas as categorias.
-
-POST /categories: Cria uma nova categoria.
+          GET /Lista de Produtos: todas as Listas de produtos.
+          POST /Nova Lista: Cria uma nova Lista de produtos.
 
 
-### 📚 Estrutura do Projeto
+## 📚 Estrutura do Projeto
 
-src/main/java
-├── com.example.ecommerce
+     src/main/java
+            ├── com.example.ecommerce
 
-│   ├── controllers # Controladores REST (endpoints da API)
+            ├── controllers # Controladores REST (endpoints da API)
 
-│   ├── models          # Entidades (Classes JPA)
+            ├── models          # Entidades (Classes JPA)
 
-│   ├── repositories    # Repositórios (interface para banco de dados)
+            ├── repositories    # Repositórios (interface para banco de dados)
 
-│   ├── services        # Lógica de negócios
+            ├── services        # Lógica de negócios
 
-│   └── dto             # Objetos de Transferência de Dados (DTOs)
+            └── dto             # Objetos de Transferência de Dados (DTOs)
+
