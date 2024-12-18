@@ -2,7 +2,9 @@ package Projeto_E_commerce.controller;
 
 
 import Projeto_E_commerce.Service.UserService;
+import Projeto_E_commerce.dto.ProductsDto;
 import Projeto_E_commerce.dto.UserDto;
+import Projeto_E_commerce.model.Products;
 import Projeto_E_commerce.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,11 @@ public class UserControlle {
         return userService.ListaUser();
     }
 
-    /*@GetMapping("/{clienteId}")
-    public ResponseEntity<List<ProductsDto>> ListaCliente(@PathVariable Long clienteId) {
-        List<ProductsDto> productsDtos = userService.UserProducts(clienteId);
+    @GetMapping("/{UserId}")
+    public ResponseEntity<List<ProductsDto>> ListaCliente(@PathVariable Long UserId) {
+        List<ProductsDto> productsDtos = userService.UserProducts(UserId);
         return ResponseEntity.ok(productsDtos);
-    }*/
+    }
 
     @PostMapping("/{id}")
     public ResponseEntity<User> CreateUser(@PathVariable Long id, @RequestBody UserDto form) {

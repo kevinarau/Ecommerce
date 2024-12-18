@@ -15,14 +15,15 @@ public class Products {
 
     @JoinColumn(unique = true)
     private String name;
+
     private String description;
+
     private double price;
 
 
 
     public Products() {
     }
-
 
 
 }

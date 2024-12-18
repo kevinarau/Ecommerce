@@ -1,6 +1,10 @@
 package Projeto_E_commerce.Service;
 
+
+import Projeto_E_commerce.Projection.ProjectProducts;
+import Projeto_E_commerce.dto.ProductsDto;
 import Projeto_E_commerce.dto.UserDto;
+import Projeto_E_commerce.model.Products;
 import Projeto_E_commerce.model.User;
 import Projeto_E_commerce.repository.UserRepository;
 import Projeto_E_commerce.repository.ProductsListRepository;
@@ -8,6 +12,7 @@ import Projeto_E_commerce.repository.ProductsListRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -66,16 +71,16 @@ public class UserService {
     }
 
 
-  /*  @Transactional(readOnly = true)
-    public List<ProductsDto> UserProducts(Long idprod) {
-        List<ProjectProducts> products = userRepository.productSelected(idprod);
-        if (products == null || products.isEmpty()) {
+   @Transactional(readOnly = true)
+    public List<ProductsDto> UserProducts(Long UserId) {
+        List<ProjectProducts> products = userRepository.productSelected(UserId);
+
+            if (products == null || products.isEmpty()) {
             return List.of();
         }
-      return products.stream()
-             .map(ProductsDto::new)
-           .toList();
-    }*/
+          return products.stream()
+                          .map(x -> new ProductsDto(x)).toList();
+    }
 
 
 }
