@@ -1,4 +1,4 @@
-package Projeto_E_commerce.Projection;
+package Projeto_E_commerce.projection;
 
 public interface ProjectProducts {
 

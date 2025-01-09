@@ -1,10 +1,9 @@
-package Projeto_E_commerce.Service;
+package Projeto_E_commerce.service;
 
 
-import Projeto_E_commerce.Projection.ProjectProducts;
+import Projeto_E_commerce.projection.ProjectProducts;
 import Projeto_E_commerce.dto.ProductsDto;
 import Projeto_E_commerce.dto.UserDto;
-import Projeto_E_commerce.model.Products;
 import Projeto_E_commerce.model.User;
 import Projeto_E_commerce.repository.UserRepository;
 import Projeto_E_commerce.repository.ProductsListRepository;

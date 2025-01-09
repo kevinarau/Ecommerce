@@ -1,6 +1,6 @@
 package Projeto_E_commerce.controller;
 
-import Projeto_E_commerce.Service.ProductsService;
+import Projeto_E_commerce.service.ProductsService;
 import Projeto_E_commerce.dto.ProductsDto;
 
 import Projeto_E_commerce.model.Products;

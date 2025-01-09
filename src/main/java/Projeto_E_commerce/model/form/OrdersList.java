@@ -14,34 +14,34 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "list_User")
-public class ordersList {
+public class OrdersList {
 
 
 
 
     @EmbeddedId
-    private pk_User_Lista Idpk = new pk_User_Lista();
+    private Pk_User_Lista Idpk = new Pk_User_Lista();
 
 
 
     private int amount;
 
 
-    public ordersList() {
+    public OrdersList() {
     }
 
-    public ordersList(Products products,User user, ProductsList productsList, int amount) {
+    public OrdersList(Products products, User user, ProductsList productsList, int amount) {
         Idpk.setUser(user);
         Idpk.setProductsList(productsList);
         Idpk.setProducts(products);
         this.amount = amount;
     }
 
-    public pk_User_Lista getId() {
+    public Pk_User_Lista getId() {
         return Idpk;
     }
 
-    public void setId(pk_User_Lista idpk) {
+    public void setId(Pk_User_Lista idpk) {
         Idpk = idpk;
     }
 

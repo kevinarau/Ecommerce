@@ -2,7 +2,7 @@ package Projeto_E_commerce.repository;
 
 
 
-import Projeto_E_commerce.Projection.ProjectProducts;
+import Projeto_E_commerce.projection.ProjectProducts;
 import Projeto_E_commerce.model.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,7 +2,7 @@ package Projeto_E_commerce.dto;
 
 
 
-import Projeto_E_commerce.Projection.ProjectProducts;
+import Projeto_E_commerce.projection.ProjectProducts;
 import Projeto_E_commerce.model.Products;
 
 import jakarta.persistence.Id;

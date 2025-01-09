@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 
 @Embeddable
-public class pk_User_Lista {
+public class Pk_User_Lista {
 
     @ManyToOne
     @JoinColumn (name =  "list_id")
@@ -53,7 +53,7 @@ public class pk_User_Lista {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        pk_User_Lista that = (pk_User_Lista) o;
+        Pk_User_Lista that = (Pk_User_Lista) o;
         return Objects.equals(productsList, that.productsList) && Objects.equals(user, that.user) && Objects.equals(products, that.products);
     }
 

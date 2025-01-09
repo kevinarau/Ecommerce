@@ -1,4 +1,4 @@
-package Projeto_E_commerce.Service;
+package Projeto_E_commerce.service;
 
 import Projeto_E_commerce.dto.ProductsDto;
 

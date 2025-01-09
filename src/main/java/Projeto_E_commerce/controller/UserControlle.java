@@ -1,10 +1,9 @@
 package Projeto_E_commerce.controller;
 
 
-import Projeto_E_commerce.Service.UserService;
+import Projeto_E_commerce.service.UserService;
 import Projeto_E_commerce.dto.ProductsDto;
 import Projeto_E_commerce.dto.UserDto;
-import Projeto_E_commerce.model.Products;
 import Projeto_E_commerce.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
