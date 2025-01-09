@@ -1,7 +1,7 @@
 
 # E-COMMERCE API
 
-Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spring Framework, Spring Data JPA e MySQL. A aplicação permite gerenciar products, categorias, Cliente. E é um projeto em evolução.
+Este projeto é uma API para um sistema de e-commerce desenvolvido com Java, Spring Framework, Spring Data JPA e MySQL. A aplicação permite gerenciar products, categorias, User. E é um projeto em evolução.
 
 ## 📋 Funcionalidades 
 
